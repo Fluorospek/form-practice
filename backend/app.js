@@ -22,7 +22,7 @@ app.post("/submitform", async (req, res) => {
 });
 
 app.get("/getresponses", async (req, res) => {
-  const forms = await Form.find({}, { _id: 0 });
+  const forms = await Form.find();
   res.status(200).json({
     status: "success",
     data: {
