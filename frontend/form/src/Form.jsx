@@ -14,7 +14,7 @@ function Form() {
   };
 
   const submit = async () => {
-    await axios.post("http://localhost:5000/formsubmit", user);
+    await axios.post("http://localhost:5000/submitform", user);
     console.log(user);
   };
 
