@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
 
 function Data() {
   const [data, setData] = useState([]);
@@ -16,17 +17,22 @@ function Data() {
   const mapData = () => {
     return data.map((item) => {
       return (
-        <div>
-          <h1>{item.name}</h1>
-          <h1>{item.email}</h1>
-        </div>
+        <Grid container alignItems="center" key={item._id}>
+          <h3>{item.name}</h3>
+          <h3>{item.email}</h3>
+          <br />
+        </Grid>
       );
     });
   };
 
   return (
     <div>
-      <Button variant="contained" onClick={clickHandler}>
+      <Button
+        variant="contained"
+        onClick={clickHandler}
+        style={{ width: "200px" }}
+      >
         Show Data
       </Button>
       {show ? mapData() : null}
